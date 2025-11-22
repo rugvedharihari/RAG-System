@@ -18,10 +18,50 @@ effective at their jobs.
 
 RAG can also be a much quicker solution to implement than fine-tuning an LLM on specific data. 
 
+RAG-Based Document Assistant
 
+A production-ready Retrieval-Augmented Generation (RAG) system designed to provide accurate, context-aware responses using Large Language Models (LLMs) and semantic search. The project combines a scalable ingestion pipeline, vector search, and a smart query engine to deliver grounded answers backed by source documents.
 
-Coming soon.
+Features
 
+Scalable Ingestion Pipeline
+
+Supports both URL-based ingestion and uploaded text files.
+
+Automatically fetches, parses, and cleans data.
+
+Uses LangChain’s UnstructuredURLLoader for reliable extraction.
+
+Embedding & Vector Store
+
+Generates text embeddings using OpenAI embedding models.
+
+Stores vectors in FAISS for efficient similarity search.
+
+Handles chunking and metadata tracking.
+
+Semantic Search Retrieval
+
+Retrieves top-k most relevant chunks using vector similarity.
+
+Ensures contextual grounding for better LLM output.
+
+Provides clear source attribution.
+
+LLM-Powered Query Engine
+
+Uses ChatGPT (or any supported LLM) to synthesize responses.
+
+Merges retrieved context into meaningful answers.
+
+Minimizes hallucinations through retrieval grounding.
+
+Architecture Overview
+
+User Query → Embed → FAISS Similarity Search → Retrieve Top-k Chunks → Prompt Construction → LLM → Final Answer + Sources
+
+Ingestion Flow:
+URL/File → Loader → Cleaning → Chunking → Embeddings → FAISS Index
 
 
 
